@@ -1,6 +1,6 @@
 ## aws-creds
 
-This utility reads AWS credentials from AWS config file profiles and exports
+This utility reads AWS credentials from AWS credential file profiles and exports
 them as environment variables.
 
 ## Install
@@ -14,7 +14,7 @@ Download the latest binary or
 aws-creds --profile foo-bar
 ```
 
-Where `--profile` is a profile in your `~/.aws/config` file.
+Where `--profile` is a profile in your `~/.aws/credentials` file.
 
 If you want to use aws-creds with another tool, you would do:
 ```sh

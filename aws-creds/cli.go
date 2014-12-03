@@ -8,7 +8,7 @@ import (
 )
 
 type options struct {
-	Profile string `short:"p" long:"profile" description:"Name of profile in ~/.aws/config" required:"true"`
+	Profile string `short:"p" long:"profile" description:"Name of profile in ~/.aws/credentials" required:"true"`
 	Version func() `short:"v" long:"version" description:"Display the version of aws-creds"`
 }
 

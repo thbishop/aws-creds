@@ -26,7 +26,7 @@ func confFilePath() (string, error) {
 		return "", err
 	}
 
-	return path.Join(usr.HomeDir, ".aws", "config"), nil
+	return path.Join(usr.HomeDir, ".aws", "credentials"), nil
 }
 
 func credKeys() []string {
@@ -38,10 +38,8 @@ func credKeys() []string {
 func credItems(profile string, f ini.File) []string {
 	items := []string{}
 
-	section := profileName(profile)
-
 	for _, k := range credKeys() {
-		if v, ok := f.Get(section, k); ok {
+		if v, ok := f.Get(profile, k); ok {
 			items = append(items, fmt.Sprintf("%s=%s", strings.ToUpper(k), v))
 		}
 	}
@@ -50,15 +48,8 @@ func credItems(profile string, f ini.File) []string {
 	return items
 }
 
-func profileName(profile string) string {
-	if profile == "default" {
-		return "default"
-	}
-	return "profile " + profile
-}
-
 func profileExists(profile string, f ini.File) bool {
-	_, exists := f[profileName(profile)]
+	_, exists := f[profile]
 	return exists
 }
 
