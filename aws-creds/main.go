@@ -67,7 +67,13 @@ func main() {
 		os.Exit(1)
 	}
 
-	for _, i := range credItems(options.Profile, f) {
-		fmt.Printf("export %s\n", i)
+	items := credItems(options.Profile, f)
+
+	if options.Export {
+		for _, i := range items {
+			fmt.Printf("export %s\n", i)
+		}
+	} else {
+		fmt.Printf("%s", strings.Join(items, " "))
 	}
 }

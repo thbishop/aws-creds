@@ -8,6 +8,7 @@ import (
 )
 
 type options struct {
+	Export  bool   `short:"e" long:"export" description:"Output as export statements"`
 	Profile string `short:"p" long:"profile" description:"Name of profile in ~/.aws/credentials" required:"true"`
 	Version func() `short:"v" long:"version" description:"Display the version of aws-creds"`
 }
