@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/vaughan0/go-ini"
 	"os"
 	"os/user"
 	"path"
 	"sort"
 	"strings"
+
+	"github.com/thbishop/aws-creds/Godeps/_workspace/src/github.com/vaughan0/go-ini"
 )
 
 func confFile() (ini.File, error) {

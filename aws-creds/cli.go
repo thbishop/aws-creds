@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	flags "github.com/jessevdk/go-flags"
+	flags "github.com/thbishop/aws-creds/Godeps/_workspace/src/github.com/jessevdk/go-flags"
 )
 
 type options struct {
