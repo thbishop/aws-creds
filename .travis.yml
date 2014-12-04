@@ -6,3 +6,4 @@ go:
 install:
   - go get code.google.com/p/go.tools/cmd/goimports
   - go get code.google.com/p/go.tools/cmd/vet
+  - go get github.com/tools/godep
