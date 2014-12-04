@@ -12,7 +12,7 @@ create_release() {
 
     env GITHUB_API=https://api.github.com \
         GITHUB_REPO=$PROJECT_NAME \
-        github-release release --tag $version --name $version
+        github-release release --tag $version --name $version --user $GITHUB_USER
 
     echo ""
     echo "Release '$version' created."
