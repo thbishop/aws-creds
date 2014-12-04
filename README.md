@@ -28,7 +28,7 @@ This is the equivalent of doing:
 env AWS_ACCESS_KEY_ID=foo AWS_SECRET_ACCESS_KEY=bar ./other-tool
 ```
 
-The second mode will append the `export` command to each item. This is useful
+The second mode will prepend the `export` command to each item. This is useful
 should you just want to export the env vars in your shell.
 ```sh
 $(aws-creds --profile foo --export) && ./other-tool
