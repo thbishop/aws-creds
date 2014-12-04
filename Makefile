@@ -19,6 +19,10 @@ fmt:
 	@echo "==> Formatting source code."
 	@goimports -w ./aws-creds
 
+release:
+	@echo "==> Releasing"
+	@script/release
+
 test: fmt vet
 	@echo "==> Running tests."
 	@godep go test -cover ./aws-creds/...
@@ -32,6 +36,7 @@ help:
 	@echo "clean\t\tremove previous builds"
 	@echo "deps\t\tdownload dependencies"
 	@echo "fmt\t\tformat the code"
+	@echo "release\t\tcreate a release"
 	@echo "test\t\ttest the code"
 	@echo "vet\t\tvet the code"
 	@echo ""
