@@ -1,5 +1,8 @@
 all: clean test build
 
+binaries: clean fmt test
+	@script/build_binaries.sh
+
 build:
 	@echo "==> Compiling source code."
 	@godep go build -v -o ./bin/aws-creds ./aws-creds
@@ -24,6 +27,7 @@ vet:
 	@godep go vet ./aws-creds/...
 
 help:
+	@echo "binaries\tcreate binaries"
 	@echo "build\t\tbuild the code"
 	@echo "clean\t\tremove previous builds"
 	@echo "deps\t\tdownload dependencies"
