@@ -1,4 +1,4 @@
-all: clean test vet fmt build
+all: clean test build
 
 build:
 	@echo "==> Compiling source code."
@@ -16,7 +16,7 @@ fmt:
 	@echo "==> Formatting source code."
 	@goimports -w ./aws-creds
 
-test:
+test: fmt vet
 	@echo "==> Running tests."
 	@godep go test -cover ./aws-creds/...
 
