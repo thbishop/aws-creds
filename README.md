@@ -1,4 +1,5 @@
 ## aws-creds
+[![Build Status](https://travis-ci.org/thbishop/aws-creds.svg?branch=master)](https://travis-ci.org/thbishop/aws-creds)
 
 This utility reads credentials from the AWS credential file profiles and prints
 them for use with other tools.
