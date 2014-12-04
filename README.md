@@ -7,7 +7,7 @@ them for use with other tools.
 ## Install
 
 Download the latest binary or
-`brew tap thbishop/aws-creds && brew install aws-creds` if you're on OSX
+`brew tap thbishop/aws-creds && brew install aws-creds` if you're on OSX.
 
 ## Usage
 
