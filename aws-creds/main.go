@@ -48,6 +48,26 @@ func credItems(profile string, f ini.File) []string {
 	return items
 }
 
+func formatCredItems(items []string, opts *options) string {
+	if opts.Export {
+		return formatWithExport(items)
+	} else {
+		return formatWithSpace(items)
+	}
+}
+
+func formatWithExport(items []string) string {
+	var out string
+	for _, i := range items {
+		out = out + fmt.Sprintf("export %s\n", i)
+	}
+	return out
+}
+
+func formatWithSpace(items []string) string {
+	return fmt.Sprintf("%s", strings.Join(items, " "))
+}
+
 func profileExists(profile string, f ini.File) bool {
 	_, exists := f[profile]
 	return exists
@@ -67,13 +87,5 @@ func main() {
 		os.Exit(1)
 	}
 
-	items := credItems(options.Profile, f)
-
-	if options.Export {
-		for _, i := range items {
-			fmt.Printf("export %s\n", i)
-		}
-	} else {
-		fmt.Printf("%s", strings.Join(items, " "))
-	}
+	fmt.Printf(formatCredItems(credItems(options.Profile, f), options))
 }
